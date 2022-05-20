@@ -40,7 +40,7 @@ aside {
 }
 
 .aside-texto textarea {
-    height: inherit;
+    height: 400px;
     width: 90%;
     font-size: 32px;
     font-weight: 400;
@@ -50,6 +50,7 @@ aside {
     background-color: inherit;
     border: none;
     outline: none;
+    overflow: hidden;
 }
 
 .aside-texto textarea::placeholder {
@@ -123,10 +124,50 @@ article {
     color: #343A40;
 }
 
-.article-texto {
+.article-subTitulo {
     text-align: center;
     font-size: 16px;
     color: #495057;
+}
+
+.article-texto textarea {
+    height: 450px;
+    width: 95%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 150%;
+    resize: none;
+    color: #0A3871;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+
+.article-btn {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-copy {
+    background-color: #F3F5FC;
+    color: #0A3871;
+    font-weight: 400;
+    font-size: 16px;
+    width: 280px;
+    height: 19px;
+    padding: 19px 24px;
+    line-height: 1px;
+    border-radius: 24px;
+    border: 1px solid #0A3871;
+}
+
+.btn-copy:hover {
+    cursor: pointer;
+    background-color: #0A3871;
+    color: #F3F5FC;
+    transition: 0.3s;
 }
 
 
