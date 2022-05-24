@@ -174,4 +174,45 @@ article {
     transition: 0.3s;
 }
 
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    border-top: 1px solid #0A3871;
+}
+
+.footer-text {
+    font-size: 15px;
+    font-weight: bolder;
+    color: #0A3871;
+}
+
+.footer-text a {
+    text-decoration: none;
+    color: black;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+  
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+  
+.fa-github {
+    background: #010409;
+    color: white;
+}
+
 
