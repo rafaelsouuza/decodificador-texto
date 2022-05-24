@@ -1,10 +1,9 @@
 var inputText;
-let click = true;
 
-let buttonCript = document.getElementsByClassName("btn-cript")[0];
+const buttonCript = document.getElementsByClassName("btn-cript")[0];
 buttonCript.addEventListener("click", function criptText() {
-    inputText = document.getElementById("input-texto").value.split('');
 
+    inputText = document.getElementById("input-texto").value.toString().toLowerCase().split("");
     for (let i = 0; i < inputText.length; i++) {
         switch (inputText[i]) {
             case "e":
@@ -21,7 +20,6 @@ buttonCript.addEventListener("click", function criptText() {
                 break;
             case "u":
                 inputText[i] = "ufat";
-                break;
         }
     }
 
@@ -30,9 +28,9 @@ buttonCript.addEventListener("click", function criptText() {
     createTextAreaEl(newTextCript);
 });
 
-let buttonDescript = document.getElementsByClassName("btn-descrip")[0];
+const buttonDescript = document.getElementsByClassName("btn-descrip")[0];
 buttonDescript.addEventListener("click", function descripText() {
-    
+
     for (let i = 0; i < inputText.length; i++) {
         switch (inputText[i]) {
             case "enter":
@@ -49,7 +47,6 @@ buttonDescript.addEventListener("click", function descripText() {
                 break;
             case "ufat":
                 inputText[i] = "u";
-                break;
         }
     }
 
@@ -58,23 +55,21 @@ buttonDescript.addEventListener("click", function descripText() {
 });
 
 function clearArticle() {
-    let node = document.getElementById("article");
-    node.innerText = "";
+    document.getElementsByClassName("article-img")[0].style.display = "none";
+    document.getElementsByClassName("article-titulo")[0].style.display = "none";
+    document.getElementsByClassName("article-subTitulo")[0].style.display = "none";
 }
 
 function createTextAreaEl(newTextCript) {
-    if (click) {
+    
+    if (!document.getElementById("text-copy")) {
         let articleEl = document.getElementById("article");
-
         let divEl = document.createElement("div");
         divEl.setAttribute("class", "article-texto");
-
         let textareaEl = document.createElement("textarea");
-        textareaEl.setAttribute("id", "inputText-copy");
-
+        textareaEl.setAttribute("id", "text-copy");
         let divButtonEl = document.createElement("div");
         divButtonEl.setAttribute("class", "article-btn");
-
         let buttonEl = document.createElement("input");
 
         articleEl.appendChild(divEl);
@@ -87,21 +82,17 @@ function createTextAreaEl(newTextCript) {
         buttonEl.value = "Copiar";
 
         textareaEl.value = newTextCript;
-
         buttonEl.addEventListener("click", copyText);
-
-        click = false;
     } else {
-        document.getElementById("inputText-copy").value = newTextCript;
+        document.getElementById("text-copy").value = newTextCript;
     }
 }
 
 function copyText() {
-    let textCopy = document.getElementById("inputText-copy");
+    let textCopy = document.getElementById("text-copy");
     textCopy.select();
     textCopy.setSelectionRange(0, 99999);
     document.execCommand("copy");
-    console.log(textCopy.value);
     textCopy.value = "";
     document.getElementById("input-texto").value = "";
 }
